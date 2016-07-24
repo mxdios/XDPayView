@@ -15,6 +15,34 @@
 - 不允许输入框密码拷贝
 - 密码密文处理
 
+用法: `PayView`文件夹 导入项目中。
+
+添加金额输入框
+
+```
+XDMoneyInputView *moneyTextField = [[XDMoneyInputView alloc] initWithFrame:CGRectMake(30, 50, self.view.frame.size.width - 60, 50)];
+    [self.view addSubview:moneyTextField];
+```
+
+添加密码输入框
+
+```
+XDPayPasswordView *payPasswordView = [[XDPayPasswordView alloc] init];
+payPasswordView.delegate = self; //设置代理
+payPasswordView.money = @"0.01"; //支付金额
+[self.view.window addSubview:payPasswordView];
+```
+
+实现密码输入框代理方法
+
+```
+- (void)passwordInputOver:(NSString *)password payPasswordView:(XDPayPasswordView *)payPasswordView
+{
+    NSLog(@"密码 = %@", password); //检测密码正确与否
+    [payPasswordView removeFromSuperview]; //移除密码输入框
+}
+```
+
 ![image](http://oalg33nuc.bkt.clouddn.com/image/QQ20160724-0.png)
 
 
