@@ -19,14 +19,14 @@
 
 添加金额输入框
 
-```
+```Objective-C
 XDMoneyInputView *moneyTextField = [[XDMoneyInputView alloc] initWithFrame:CGRectMake(30, 50, self.view.frame.size.width - 60, 50)];
-    [self.view addSubview:moneyTextField];
+[self.view addSubview:moneyTextField];
 ```
 
 添加密码输入框
 
-```
+```Objective-C
 XDPayPasswordView *payPasswordView = [[XDPayPasswordView alloc] init];
 payPasswordView.delegate = self; //设置代理
 payPasswordView.money = @"0.01"; //支付金额
@@ -35,7 +35,7 @@ payPasswordView.money = @"0.01"; //支付金额
 
 实现密码输入框代理方法
 
-```
+```OC
 - (void)passwordInputOver:(NSString *)password payPasswordView:(XDPayPasswordView *)payPasswordView
 {
     NSLog(@"密码 = %@", password); //检测密码正确与否
