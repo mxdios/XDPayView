@@ -35,7 +35,7 @@ payPasswordView.money = @"0.01"; //支付金额
 
 实现密码输入框代理方法
 
-```OC
+```Objective-C
 - (void)passwordInputOver:(NSString *)password payPasswordView:(XDPayPasswordView *)payPasswordView
 {
     NSLog(@"密码 = %@", password); //检测密码正确与否
